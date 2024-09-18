@@ -129,7 +129,8 @@ button.floating-button:hover {
 
 
 
-/* main) section1 - 클로버쉐어의 OTT구독서비스는 확실하게 다릅니다. */
+/* main) section1 */
+#section1>*{opacity: 0;}
 #section1{
     row-gap: 3rem;
     background-color: #fff;
@@ -176,12 +177,12 @@ path {
 
 /* main) section2 */
 #section2{background-color:#f5f5f7;}
-#section2 > *{opacity: 1;}
+#section2 > *{opacity: 0;}
 #section2 > div{
     background-color:rgba(255,255,255,0.5);
     border-radius:2rem;
     margin-top:30px;
-    padding:3rem 2rem;
+    padding:5rem 2rem;
     box-shadow: 0 0 7px rgba(0, 0, 0, 0.1);
 }
 #section2 h2{
@@ -196,10 +197,8 @@ path {
 }
 #section2 .contents{
     display: grid; 
-    grid-template-columns: repeat(2, 1fr); 
-    grid-template-rows: repeat(2, 1fr); 
-    gap: 2rem; 
-    margin-top:30px;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1rem;
 }
 #section2 .contents .item{
     display:flex;
@@ -209,20 +208,33 @@ path {
     row-gap:10px;
 }
 #section2 .contents .item p{
-    font-size:14px;
+    font-size:1.4rem;
     color:#777;
     line-height: 1.4;
 }
 #section2 .contents .item p strong{
-    font-size:15px;
+    font-size:1.4rem;
     color:#333;
 }
 #section2 .contents .item p span{
     color:#00a7e9;
 }
+#section2 .contents .item ul{
+    margin-bottom:2rem;
+}
+#section2 .contents .item ul li{
+    font-size:1.3em;
+    margin-top:1rem;
+    display:flex;
+    align-items: center;
+    column-gap:0.5rem;
+}
+#section2 .imgbox {
+    width: 75%;
+    margin-top:4rem;
+}
 #section2 .imgbox img{
-    width:143px;
-    height: auto;
+    width:100%;
 }
 
 .sticky:hover {
@@ -251,7 +263,23 @@ path {
     cursor: pointer;
     opacity: 0;
 }
-
+@media (min-width: 450px){
+    #section2 .contents .item p{
+        font-size: 1.6rem;
+    }
+    #section2 .contents .item ul{
+        background: #e8f3f8;
+        padding:1rem 2rem 2rem;
+        border-radius: 1.5rem;
+    }
+    #section2 .contents .item ul li{
+        font-size:1.4em;
+        margin-top:1rem;
+        display:flex;
+        align-items: center;
+        column-gap:1rem;
+    }
+} 
 /* 데스크탑 환경에서의 여백 조정 */
 @media (min-width: 601px) {
     .sticky {
@@ -262,165 +290,94 @@ path {
 }
 
 /* main) section3 */
-#section3 > *{opacity: 1;}
+#section3 > *{opacity: 0;}
 #section3{
-    position: relative;
-    overflow: hidden;
-    height: 49rem;
-    border-bottom: 0.3rem solid #c7c7c7;
+    padding-top: 7rem;
     background-color: #fff;
 }
-#section3 img:nth-of-type(1){
-    margin-top: 2rem;
-    width: 70%;
-    
-}
-#section3 img:nth-of-type(2){
-    position: absolute;
-    top:22rem;
-    left:23%;
-    width:22.6rem;
-}
-#section3 img:nth-of-type(3){
-    position: absolute;
-    top:26rem;
-    left:13%;
-    width:29.8rem;
-}
-#section3 img:nth-of-type(4){
-    position: absolute;
-    top:36.5rem;
-    left:13%;
-    width:29.8rem;
-
-}
-
-.sec2_06 {
-    padding-top: 7rem;
-    height: 44rem;
-}
-
-.sec2_06 .business-name{
+#section3 .business-name{
     margin-top: 14rem;
     font-size: 2.2rem
 }
-
-
-.sec2_06 h2 {
+#section3 h2 {
     text-align: center;
 }
-/* 기본 스타일 */
-
-.sec2_06 .step-wrap {
+#section3 .step-wrap {
     display: flex;
-    justify-content: space-evenly; /* 아이템 사이를 균등하게 배분 */
-    /* align-items: center; 수직 정렬 (필요한 경우) */
-    /* gap: 0px;  */
-    width: 100%;
-    margin-top: 2rem;
-
+    flex-direction: column;
+    margin-top: 4rem;
+    row-gap:4rem;
 }
 
-.sec2_06 .box {
+#section3 .box {
     position: relative;
-    width: calc(100% / 3 - 20px);
-    padding: 20px;
+    /* width: calc(100% / 3 - 20px); */
+    width:100%;
+    padding: 3.5rem;
     background-color: white;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 1.5rem;
     /* text-align: center; */
-    box-sizing: border-box;
     transition: all 0.3s ease;
 }
-
-.sec2_06 .box .txtbox .num {
-    font-size: 20px;
-    margin-bottom: 10px;
-    color: #0916FF;
+#section3 .box:after{
+    content:'STEP01';
+    display:block;
+    position: absolute;
+    top:-1rem;
+    left:50%;
+    padding:0.5rem 1.5rem;
+    color:#fff;
+    background-color: #00a7e9;
+    font-size:1.4rem;
+    border-radius: 2rem;
+    transform: translateX(-50%);
 }
-
-.sec2_06 .box .txtbox .tit {
+#section3 .box:nth-of-type(2):after{
+    content:'STEP02';
+}
+#section3 .box:nth-of-type(3):after{
+    content:'STEP03';
+}
+#section3 .box .txtbox{
+    display:flex;
+    justify-content: space-between;
+}
+#section3 .box .tit {
     font-size: 18px;
-    margin-bottom: 10px;
+    margin-bottom: 1.8rem;
     font-weight: bold;
 }
 
-.sec2_06 .box .txtbox .detail {
-    font-size: 14px;
+#section3 .box .txtbox .detail {
+    font-size: 15px;
     color: #555;
+    line-height: 1.4;
 }
 
-.sec2_06 .box .ico {
+#section3 .box .ico {
     margin-top: 20px;
-}
-
-.ico {
     display: flex;
-    justify-content: flex-end; /* 아이콘을 오른쪽 끝으로 정렬 */
 }
 
-
-/* 기본 스타일 (모바일 기준) */
-.sec2_06 .box {
-    padding: 10px;
-}
-
-.sec2_06 .box .txtbox .num {
-    font-size: 12px;
-}
-
-.sec2_06 .box .txtbox .tit {
-    font-size: 11px;
-}
-
-.sec2_06 .box .txtbox .detail {
-    font-size: 10px;
-}
-
-.sec2_06 .ico img {
-    width: 28px;
-    height: 28px;
-}
-
-/* PC 반응형 스타일 */
-@media (min-width: 769px) {
-
-    .sec2_06  .wrap {
-        padding: 3rem;
+@media screen and (min-width:500px){
+    #section3 .step-wrap{
+        flex-direction: row;
+        justify-content: space-between;
     }
-
-    .sec2_06 .box {
-        padding: 20px ;
-        border-radius: 1.5rem;
+    #section3 .box{
+        width: calc(100% / 3 - 20px);
+        padding:3rem 1.5rem;
     }
-
-    .sec2_06 .box .txtbox .num {
-        font-size: 18px;
+    #section3 .box .txtbox{
+        flex-direction: column;
+        height: 15rem;
+        justify-content: space-between;
     }
-
-    .sec2_06 .box .txtbox .tit {
-        font-size: 16px;
-    }
-
-    .sec2_06 .box .txtbox .detail {
-        font-size: 15px;
-    }
-
-    .sec2_06 .ico img {
-        width: 36px;
-        height: 36px;
+    #section3 .box .txtbox .ico{
+        justify-content: end;
     }
 }
-
-
-
-
-
-
-
-
-
-
 
 /* modal - 로그인 &회원가입  */
 #myModal{display: none;}

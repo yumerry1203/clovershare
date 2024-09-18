@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-/* GSAP 효과 
+/* GSAP 효과 */
 let funcObj = {
     f_0: function () {
         const tl = gsap.timeline();
@@ -160,7 +160,7 @@ window.addEventListener('scroll', function () {
         }
     };
 
-}); */
+}); 
 
 
 document.getElementById("startServiceButton").addEventListener("click", function() {
